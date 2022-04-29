@@ -10,7 +10,8 @@
   overflow: hidden;
   align-items: center;
   text-align: center;
-  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.5)), url("../img/codingImg.png") center top;
+  font-family: "Raleway", sans-serif;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.5)), url("../img/grave.jpg") center top;
   background-size: cover;
 }
 .home_name {
@@ -24,13 +25,24 @@
   font-weight: 700;
 }
 
+@keyframes animatedBackground {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
 .menu-btn {
   position: absolute;
   z-index: 1;
   right: 1rem;
   top: 1rem;
   height: 20px;
-  width: 28x;
+  width: 28px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
@@ -101,25 +113,90 @@
   transform: translateY(0);
 }
 .nav .menu-nav_item {
+  position: relative;
   transform: translateX(100vw);
   transition: all 0.5s ease-in-out;
 }
 .nav .menu-nav_item.open {
   transform: translateX(0);
 }
-.nav .menu-nav_item.active > a {
+.nav .menu-nav_item.active > a:before, .nav .menu-nav_item.active > a:after {
   color: #03A062;
 }
 .nav .menu-nav_link {
+  position: relative;
   display: inline-block;
   font-size: 2rem;
   text-transform: uppercase;
   padding: 2rem;
   font-weight: 300;
+  color: transparent;
   transition: all 0.5s ease-in-out;
 }
-.nav .menu-nav_link:hover {
+.nav .menu-nav_link:before, .nav .menu-nav_link:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  color: white;
+  box-sizing: border-box;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+}
+.nav .menu-nav_link:before {
+  -webkit-clip-path: polygon(0 0, 100% 3%, 100% 50%, 0 50%);
+  clip-path: polygon(0 0, 100% 3%, 100% 50%, 0 50%);
+}
+.nav .menu-nav_link:hover:before {
   color: #03A062;
+  transform: translate(10px, -2px);
+}
+.nav .menu-nav_link:after {
+  -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+}
+.nav .menu-nav_link:hover:after {
+  color: #03A062;
+  transform: translate(-10px, 2px);
+}
+
+#logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+#logo svg {
+  cursor: pointer;
+}
+#logo svg #leftLogo {
+  fill: white;
+}
+#logo svg #rightLogo {
+  fill: #03A062;
+}
+#logo svg #Intersect, #logo svg #Intersect_2, #logo svg #Intersect_3, #logo svg #Intersect_4, #logo svg #Intersect_5, #logo svg #Intersect_6 {
+  transition: all 0.5s ease-in-out;
+}
+#logo svg:hover #Intersect {
+  transform: translate(20%, -20%);
+}
+#logo svg:hover #Intersect_2 {
+  transform: translate(20%, 0%);
+}
+#logo svg:hover #Intersect_3 {
+  transform: translate(20%, 20%);
+}
+#logo svg:hover #Intersect_4 {
+  transform: translate(-20%, -20%);
+}
+#logo svg:hover #Intersect_5 {
+  transform: translate(-20%, 0%);
+}
+#logo svg:hover #Intersect_6 {
+  transform: translate(-20%, 20%);
 }
 
 .menu-nav_item:nth-child(1) {
@@ -140,44 +217,130 @@
 
 .about {
   padding-bottom: 2rem;
-}
-.about_bio-image {
-  height: 50vh;
-  width: 100%;
-  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.5)), url("../img/codingImg.png") center top;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
-.about_bio-image p {
-  margin-bottom: 2rem;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.7), rgba(39, 39, 39, 0.4)), url("../img/moon.jpg") center top;
+  /* To calculate the percentage we need to do 472 - 472 x 0.(our percentage) */
 }
 .about_bio {
-  width: 80%;
+  width: 100%;
   text-align: center;
+  font-family: "Raleway", sans-serif;
+  padding: 20vh 5% 0;
 }
 .about_bio .text-secondary {
   padding-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  background: linear-gradient(to right, #03A062, white);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .about .jobs {
   width: 60vw;
-  margin: 2rem auto 0 auto;
+  margin: 2rem auto 0;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2rem;
+  font-family: "Raleway", sans-serif;
+  background-color: rgba(255, 255, 255, 0.002);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.9px);
+  -webkit-backdrop-filter: blur(9.9px);
+  border: 1px solid rgba(255, 255, 255, 0.27);
+  padding: 2rem 0 1rem;
 }
 .about .jobs_job {
-  background: #414141;
   padding: 0.5rem;
-  border-bottom: 5px solid #03A062;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.about .jobs_job h2, .about .jobs_job h3 {
-  margin: 0.5rem 0;
+.about .skill {
+  width: 160px;
+  height: 160px;
+  position: relative;
 }
-.about .jobs_job h6 {
-  margin: 0.3rem 0;
+.about .outer {
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  padding: 20px;
+}
+.about .inner {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7), -0.5px -0.5px 0px white, 0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
+.about .number {
+  font-weight: 600;
+  text-align: center;
+}
+.about circle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 20px;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+}
+.about #html {
+  animation: anim 1.5s linear forwards;
+}
+.about #js {
+  animation: animJs 1.5s linear forwards;
+}
+.about #php {
+  animation: animPhp 1.5s linear forwards;
+}
+.about #sql {
+  animation: animSql 1.5s linear forwards;
+}
+.about #node {
+  animation: animNode 1.5s linear forwards;
+}
+.about #sass {
+  animation: animSass 1.5s linear forwards;
+}
+.about svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(270deg);
+}
+@keyframes anim {
+  100% {
+    stroke-dashoffset: 118;
+  }
+}
+@keyframes animJs {
+  100% {
+    stroke-dashoffset: 236;
+  }
+}
+@keyframes animPhp {
+  100% {
+    stroke-dashoffset: 236;
+  }
+}
+@keyframes animSql {
+  100% {
+    stroke-dashoffset: 189;
+  }
+}
+@keyframes animNode {
+  100% {
+    stroke-dashoffset: 283;
+  }
+}
+@keyframes animSass {
+  100% {
+    stroke-dashoffset: 142;
+  }
 }
 .about .social-icons {
   display: flex;
@@ -189,27 +352,53 @@
 
 .projects {
   padding-bottom: 2rem;
+  background: url("../img/moon.jpg") center/cover;
 }
-.projects_bio-image {
-  height: 30vh;
+.projects_bio {
   width: 100%;
-  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.5)), url("../img/codingImg.png") center top;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  padding: 20vh 5% 0;
 }
-.projects_bio-image .text-secondary {
+.projects_bio_wrapper {
+  position: relative;
+}
+.projects_bio_wrapper .text-secondary {
+  padding-bottom: 1rem;
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: white;
+  animation: fade-in-text 0.01s linear 1.5s forwards;
+}
+.projects_bio_wrapper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 100%;
+  width: 0%;
+  bottom: 0;
+  z-index: 1;
+  background-color: #03A062;
+  animation: swipe-in-text 1s ease-out 1s forwards;
 }
 .projects_items {
   width: 60vw;
-  margin: 2rem auto 0 auto;
+  margin: 2rem auto;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2rem;
+  font-family: "Raleway", sans-serif;
+  background-color: rgba(255, 255, 255, 0.002);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.9px);
+  -webkit-backdrop-filter: blur(9.9px);
+  border: 1px solid rgba(255, 255, 255, 0.27);
+  padding: 2rem;
 }
 .projects_item {
   position: relative;
@@ -245,7 +434,8 @@
   width: 100%;
   z-index: 1;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   align-items: center;
   text-align: center;
 }
@@ -257,6 +447,21 @@
 .projects_btn:hover {
   color: #000;
 }
+.projects #text {
+  grid-column: 1/4;
+  grid-row: 1/2;
+  margin: 0 5px;
+}
+.projects #preview {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  margin-left: 2rem;
+}
+.projects #gitLink {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  margin-right: 2rem;
+}
 .projects .social-icons {
   display: flex;
   flex-direction: column;
@@ -264,33 +469,252 @@
 .projects footer {
   transform: rotate(90deg) translate(-3rem, -5rem);
 }
+@keyframes swipe-in-text {
+  0% {
+    width: 0%;
+    right: 100%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    right: 0%;
+    left: 0;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+  }
+}
+@keyframes fade-in-text {
+  from {
+    color: white;
+  }
+  to {
+    color: #03A062;
+  }
+}
 
 .contact {
-  height: 100%;
-  padding-top: 40vh;
-  overflow: hidden;
+  min-height: 100%;
+  padding: 10vh 20px 0;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.5)), url("../img/codingImg.png") center top;
+  font-family: "Raleway", sans-serif;
+  width: 100%;
+  background: url("../img/moon.jpg") center top;
   background-size: cover;
 }
-.contact h2 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
+.contact .containerForm {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
 }
-.contact_list {
+.contact .containerForm::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  transform: skewX(-15deg);
+}
+.contact .containerForm h2 {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 36px;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.contact .containerForm .row100 {
+  position: relative;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 2rem;
-  font-size: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.contact .containerForm .row100 .col {
+  position: relative;
+  width: 100%;
+  padding: 0 10px;
+  margin: 30px 0 20px;
+}
+.contact .containerForm .row100 .col .inputBox {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+}
+.contact .containerForm .row100 .col .inputBox input, .contact .containerForm .row100 .col .inputBox textarea {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 0 10px;
+  z-index: 1;
+  color: #000;
+}
+.contact .containerForm .row100 .col .inputBox .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  padding: 0 10px;
+  display: block;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.contact .containerForm .row100 .col .inputBox input:focus + .text, .contact .containerForm .row100 .col .inputBox input:valid + .text, .contact .containerForm .row100 .col .inputBox textarea:focus + .text, .contact .containerForm .row100 .col .inputBox textarea:valid + .text {
+  top: -35px;
+  left: -10px;
+  color: #03A062;
+}
+.contact .containerForm .row100 .col .inputBox .line {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: 0.5s;
+  border-radius: 2px;
+  pointer-events: none;
+}
+.contact .containerForm .row100 .col .inputBox input:focus ~ .line, .contact .containerForm .row100 .col .inputBox input:valid ~ .line {
+  height: 100%;
+}
+.contact .containerForm .row100 .col .inputBox .textarea {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  padding: 10px 0;
+}
+.contact .containerForm .row100 .col .inputBox textarea:focus ~ .line, .contact .containerForm .row100 .col .inputBox textarea:valid ~ .line {
+  height: 100%;
+}
+.contact .containerForm .row100 #send {
+  text-align: center;
+}
+.contact .containerForm .row100 a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03A062;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+.contact .containerForm .row100 a:hover {
+  background: #03A062;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03A062, 0 0 25px #03A062, 0 0 50px #03A062, 0 0 100px #03A062;
+}
+.contact .containerForm .row100 a span {
+  position: absolute;
+  display: block;
+}
+.contact .containerForm .row100 a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03A062);
+  animation: btn-anim1 1s linear infinite;
+}
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+.contact .containerForm .row100 a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03A062);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%, 100% {
+    top: 100%;
+  }
+}
+.contact .containerForm .row100 a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03A062);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%, 100% {
+    right: 100%;
+  }
+}
+.contact .containerForm .row100 a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03A062);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%, 100% {
+    bottom: 100%;
+  }
 }
 .contact .social-icons {
-  position: initial;
-  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.contact footer {
+  transform: rotate(90deg) translate(-3rem, -5rem);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 935px) {
   .menu-btn {
     visibility: hidden;
   }
@@ -313,10 +737,16 @@
     font-size: 1.5rem;
   }
 
+  .about {
+    height: 100%;
+  }
   .about_bio {
     font-size: 1.5rem;
   }
 
+  .projects {
+    height: 100%;
+  }
   .projects_bio-image {
     height: 40vh;
   }
@@ -330,6 +760,11 @@
   .contact_list {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .jobs {
+    grid-template-columns: repeat(2, 1fr) !important;
+    display: flex;
+  }
 }
 @media screen and (min-width: 1024px) {
   .projects_items {
@@ -339,17 +774,26 @@
   .contact_list {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .jobs {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
 }
 @media screen and (min-width: 1600px) {
   .projects_bio-image {
     height: 50vh;
+  }
+
+  .jobs {
+    grid-template-columns: repeat(3, 1fr);
+    display: flex;
   }
 }
 body {
   background: #272727;
   color: #fff;
   height: 100vh;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Raleway", sans-serif;
   line-height: 1;
 }
 
@@ -387,7 +831,8 @@ main .social-icons a {
   transition: all 0.5s ease-in-out;
 }
 main .social-icons a:hover {
-  color: #03A062;
+  color: var(--clr);
+  filter: drop-shadow(0 0 20px var(--clr)) drop-shadow(0 0 40px var(--clr)) drop-shadow(0 0 60px var(--clr));
 }
 
 footer {

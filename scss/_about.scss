@@ -1,57 +1,188 @@
 .about{
     padding-bottom: 2rem;
-
-
-    &_bio-image{
-        height: 50vh;
-        width: 100%;
-        background: 
+      background: 
             linear-gradient(
                 to right,
-                rgba($primary-color, 0.9),
-                rgba($primary-color, 0.5)
+                rgba($primary-color, 0.7),
+                rgba($primary-color, 0.4)
             ), 
-            url('../img/codingImg.png') center top;
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
+            url('../img/moon.jpg') center top;
+
+    // &_bio-image{
+    //     height: 100%;
+    //     width: 100%;
+    //     // background: 
+    //     //     linear-gradient(
+    //     //         to right,
+    //     //         rgba($primary-color, 0.9),
+    //     //         rgba($primary-color, 0.4)
+    //     //     ), 
+    //     //     url('../img/grave.jpg') center top;
+    //     // background: linear-gradient(to right, #13756b, #131d75, #187513);
+    //     // background: linear-gradient(to right, rgb(138, 129, 129), rgb(187, 182, 182),#474444);
+    //     //  background-size: 400% 400%;
+    //     // animation: animatedBackground 10s infinite ease-in-out;
+    //     // background-size: cover;
         
-        p{
-            margin-bottom : 2rem;
-        }
-    }
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     justify-content: flex-end;
+        
+    //     p{
+    //         margin-bottom : 2rem;
+    //         font-family: $font;
+    //     }
+    // }
 
     &_bio{
-        width: 80%;
+        // height: 100%;
+        width: 100%;
         text-align: center;
-
+        font-family: $font;
+        // text-align: center;
+        // padding-top: 20vh;
+        padding: 20vh 5% 0;
         .text-secondary{
             padding-bottom: 1rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            background: linear-gradient(
+            to right, 
+            $secondary-color, 
+            rgb(255, 255, 255)
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     }
 
     .jobs{
         width: 60vw;
-        margin: 2rem auto 0 auto;
+        margin: 2rem auto 0 ;
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 2rem;
+        font-family: $font;
 
+        background-color: rgba(255, 255, 255, 0.002);
+        // color: black;
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.9px);
+        -webkit-backdrop-filter: blur(9.9px);
+        border: 1px solid rgba(255, 255, 255, 0.27);
+        padding: 2rem 0 1rem;
         &_job{
-            background: lighten($primary-color, 10%);
             padding: 0.5rem;
-            border-bottom: 5px solid $secondary-color;
-
-            h2,h3{
-                margin: 0.5rem 0;
-            }
-            h6{
-                margin: 0.3rem 0;
-            }
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
+    
+   
+    
+    .skill{
+        width: 160px;
+        height: 160px;
+        position: relative;
+
+
+    }
+    .outer{
+        height: 160px;
+        width: 160px;
+        border-radius: 50%;
+        box-shadow: 6px 6px 10px -1px rgb(0, 0, 0, 0.15),
+                    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+        padding: 20px;
+    }
+    .inner{
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: inset  4px 4px 6px -1px rgb(0, 0, 0, 0.2),
+                    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+                    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+                    0.5px 0.5px 0px rgb(0, 0, 0, 0.15),
+                    0px 12px 10px -10px rgb(0, 0, 0, 0.05);
+    }
+
+    .number{
+        font-weight: 600;
+        text-align: center;
+    }
+    circle{
+        fill: none;
+        stroke: url(#GradientColor);
+        stroke-width: 20px;  
+        stroke-dasharray: 472;
+        stroke-dashoffset: 472;
+    }
+    #html{
+        animation: anim 1.5s linear forwards; 
+    }
+    #js{
+        animation: animJs 1.5s linear forwards; 
+    }
+    #php{
+        
+        animation: animPhp 1.5s linear forwards; 
+    }
+    #sql{
+        
+        animation: animSql 1.5s linear forwards; 
+    }
+    #node{
+        animation: animNode 1.5s linear forwards; 
+    }
+    #sass{
+        animation: animSass 1.5s linear forwards; 
+    }
+    svg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotate(270deg);
+    }
+    
+    /* To calculate the percentage we need to do 472 - 472 x 0.(our percentage) */
+    @keyframes anim{
+        100%{
+            stroke-dashoffset: 118;
+        }
+    }
+    @keyframes animJs{
+        100%{
+            stroke-dashoffset: 236;
+        }
+    }
+    @keyframes animPhp{
+        100%{
+            stroke-dashoffset: 236;
+        }
+    }
+    @keyframes animSql{
+        100%{
+            stroke-dashoffset: 189;
+        }
+    }
+    @keyframes animNode{
+        100%{
+            stroke-dashoffset: 283;
+        }
+    }
+    @keyframes animSass{
+        100%{
+            stroke-dashoffset: 142;
+        }
+    }
+    
 
     .social-icons{
         display: flex;

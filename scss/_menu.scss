@@ -4,7 +4,7 @@
     right: 1rem;
     top: 1rem;
     height: 20px;
-    width: 28x;
+    width: 28px;
     cursor: pointer;
     @include transition-ease;
 
@@ -90,33 +90,117 @@
         }
 
         &_item{
+            position: relative;
             transform: translateX(100vw);
             @include transition-ease;
-
+            
             &.open{
                 transform: translateX(0);
             }
 
-            &.active > a{
+            &.active > a:before, &.active > a:after{
                 color: $secondary-color;
             }
         }
 
         &_link{
+            position: relative;
             display: inline-block;
             font-size: 2rem;
             text-transform: uppercase;
             padding: 2rem;
             font-weight: 300;
+            color: transparent;
             @include transition-ease;
 
-            &:hover{
-                color: $secondary-color;
+            // &:hover{
+            //     color: $secondary-color;
+            // }
+            &:before,
+            &:after{ 
+                
+                content: attr(data-text);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 2rem;
+                color: white;
+                box-sizing: border-box;
+                transition: .5s;
+                transition-delay: .25s;
             }
-
+            &:before{
+                -webkit-clip-path: polygon(0 0, 100% 3%, 100% 50%, 0 50%);
+                clip-path: polygon(0 0, 100% 3%, 100% 50%, 0 50%);
+            }
+            &:hover:before{
+                color: $secondary-color;
+                transform: translate(10px, -2px);
+            }
+            &:after{
+                -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+                clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+                
+            }
+            &:hover:after{
+                color: $secondary-color;
+                transform: translate(-10px, 2px);
+            }
+            
         }
     }
 }
+#logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    svg{
+        cursor: pointer;
+
+        #leftLogo{
+            fill: white;
+        }#rightLogo{
+            fill: $secondary-color;
+        }
+        #Intersect,#Intersect_2,#Intersect_3,#Intersect_4,#Intersect_5,#Intersect_6{
+            transition: all 0.5s ease-in-out;
+        }
+        &:hover #Intersect{
+            transform: translate(20%, -20%) ;
+        }
+        &:hover #Intersect_2{
+            transform: translate(20%, 0%);
+        
+        }
+        &:hover #Intersect_3{
+            transform: translate(20%, 20%);
+        
+        }
+        &:hover #Intersect_4{
+            transform: translate(-20%, -20%);
+        
+        }
+        &:hover #Intersect_5{
+            transform: translate(-20%, 0%);
+        
+        }
+        &:hover #Intersect_6{
+            transform: translate(-20%, 20%);
+           
+        }
+
+    }
+}
+// #logo img{
+//     width: 100px;
+//     height: 100px;
+// }
+
+
+
+
 
 
 @for $i from 1 through 4 {

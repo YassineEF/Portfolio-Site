@@ -25,11 +25,15 @@
         }
     }
 
-    .about_bio{
-        font-size: 1.5rem;
+    .about{
+        height: 100%;
+        &_bio{
+            font-size: 1.5rem;
+        }
     }
 
     .projects{
+        height: 100%;
         &_bio-image{
             height: 40vh;
         }
@@ -44,6 +48,10 @@
     .contact_list{
         grid-template-columns: repeat(2, 1fr);
     }
+    .jobs{
+        grid-template-columns: repeat(2, 1fr) !important;
+        display: flex;
+    }
 }
 
 
@@ -56,11 +64,18 @@
     .contact_list{
         grid-template-columns: repeat(3, 1fr);
     }
+    .jobs{
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
 }
 
 
 @include media-xl{
     .projects_bio-image{
         height: 50vh;
+    }
+    .jobs{
+        grid-template-columns: repeat(3, 1fr);
+        display: flex;
     }
 }

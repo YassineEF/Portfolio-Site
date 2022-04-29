@@ -8,6 +8,7 @@ let showMenu = false;
 
 menuButton.addEventListener('click', toggleMenu);
 
+//function menu toggle
 function toggleMenu(){
     if(!showMenu){
         hamburger.classList.add('open');
@@ -25,3 +26,11 @@ function toggleMenu(){
         showMenu = false;
     }
 }
+
+
+
+
+//change dynamically the year
+const d = new Date();
+let year = d.getFullYear();
+$(".year").html(year);

@@ -11,7 +11,8 @@ body{
     background: $primary-color;
     color: set-text-color($primary-color);
     height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: $font;
     line-height: 1;
 }
 
@@ -47,9 +48,12 @@ main{
         a{
             padding: 0.4rem;
             @include transition-ease;
-
+            // color: white;
+            
             &:hover{
-                color: $secondary-color;
+                color: var(--clr);
+                // color: $secondary-color;
+                filter: drop-shadow(0 0 20px var(--clr)) drop-shadow(0 0 40px var(--clr)) drop-shadow(0 0 60px var(--clr));
             }
         }
     }

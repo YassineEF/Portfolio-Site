@@ -4,6 +4,13 @@
     overflow: hidden;   
     align-items: center;
     text-align: center;
+    font-family: $font;
+    // background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+    // background: linear-gradient(to right, #13756b, #131d75, #187513);
+    // background-size: 400% 400%;
+    // animation: animatedBackground 10s infinite ease-in-out;
+    // background: black;
+    // background: $primary-color;
     background: 
     linear-gradient(
         to right,
@@ -11,7 +18,7 @@
         rgba($primary-color, 0.5)
     ), 
     
-    url('../img/codingImg.png') center top;
+    url('../img/grave.jpg') center top;
     background-size: cover;
 
     &_name{
@@ -19,6 +26,7 @@
         padding-bottom: 1rem;
         margin-bottom: 1rem;
         border-bottom: 2px solid set-text-color($primary-color);
+        
 
         &--last{
             color: $secondary-color;
@@ -27,3 +35,14 @@
     }
 }
 
+@keyframes animatedBackground{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}

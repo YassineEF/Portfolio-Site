@@ -1,36 +1,94 @@
 .projects{
     padding-bottom: 2rem;
+    
+    background: 
+            // linear-gradient(
+            //     to right,
+            //     rgba($primary-color, 0.9),
+            //     rgba($primary-color, 0.4)
+            // ), 
+            url('../img/moon.jpg') center  / cover;
 
 
-    &_bio-image{
-        height: 30vh;
-        width: 100%;
-        background: 
-            linear-gradient(
-                to right,
-                rgba($primary-color, 0.9),
-                rgba($primary-color, 0.5)
-            ), 
-            url('../img/codingImg.png') center top;
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
-        
-        .text-secondary{
-            font-size: 2rem;
-            margin-bottom: 2rem;
+    // &_bio-image{
+    //     height: 30vh;
+    //     width: 100%;
+    //     background: 
+    //         linear-gradient(
+    //             to right,
+    //             rgba($primary-color, 0.9),
+    //             rgba($primary-color, 0.4)
+    //         ), 
+    //         url('../img/codingImg3.png') center top;
+    //     background-size: cover;
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     justify-content: flex-end;
+        &_bio{
+            width: 100%;
+            text-align: center;
+            font-family: $font;
+            padding: 20vh 5% 0;
+           &_wrapper{
+                position: relative;
+
+                .text-secondary{
+                    padding-bottom: 1rem;
+                    font-size: 2rem;
+                    margin: 2rem 0;
+                    text-transform: uppercase;
+                    font-weight: 900;
+                    color: white; 
+                    // opacity: 0;
+                    animation: fade-in-text 0.01s linear 1.5s forwards;
+                    // background: linear-gradient(
+                    // to right, 
+                    // $secondary-color, 
+                    // rgb(255, 255, 255)
+                    // );
+                    // background-clip: text;
+                    // -webkit-background-clip: text;
+                    // -webkit-text-fill-color: transparent;
+                }
+                &::after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 100%;
+                    width: 0%;
+                    bottom: 0;
+                    z-index: 1;
+                    background-color: $secondary-color;
+                    // background: linear-gradient(to right, $primary-color, $secondary-color);
+                    animation: swipe-in-text 1s ease-out 1s forwards;
+                }
+           }
+            
+
+            
         }
-    }
+    // }
 
 
     &_items{
         width: 60vw;
-        margin: 2rem auto 0 auto;
+        margin: 2rem auto;
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 2rem;
+        font-family: $font;
+
+        background-color: rgba(255, 255, 255, 0.002);
+        // color: black;
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.9px);
+        -webkit-backdrop-filter: blur(9.9px);
+        border: 1px solid rgba(255, 255, 255, 0.27);
+        padding: 2rem ;
     }
     
     &_item{
@@ -41,6 +99,7 @@
 
         img{
             width: 100%;
+            // height: 100%;
         }
 
         &::after{
@@ -74,7 +133,8 @@
         width: 100%;
         z-index: 1;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
         align-items: center;
         text-align: center;
     }
@@ -88,7 +148,21 @@
             color: set-text-color(set-text-color($secondary-color));
         }
     }
-
+    #text{
+        grid-column: 1/4;
+        grid-row: 1/2;
+        margin: 0 5px;
+    }
+    #preview{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        margin-left: 2rem;
+    }
+    #gitLink{
+        grid-column: 3/4;
+        grid-row: 2/3;
+        margin-right: 2rem;
+    }
     .social-icons{
         display: flex;
         flex-direction: column;
@@ -99,5 +173,26 @@
             rotate(90deg)
             translate(-3rem, -5rem);
     }
-
+    @keyframes swipe-in-text {
+        0%{
+            width: 0%;
+            right: 100%;
+            left: 0;
+        }
+        50%{
+            width: 100%;
+            right: 0%;
+            left: 0;
+        }
+        100%{
+            width: 0%;
+            left: 100%;
+        }
+    }
+    @keyframes fade-in-text{
+        // from{ opacity: 0;}
+        // to{ opacity: 1;}
+        from{ color: white;}
+        to{ color: $secondary-color;}
+    }
 }

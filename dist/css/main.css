@@ -540,11 +540,17 @@
   text-transform: uppercase;
   margin-bottom: 20px;
 }
+.contact .containerForm h3 {
+  width: 100%;
+  text-align: center;
+  color: #44FF9A;
+}
 .contact .containerForm .row100 {
   position: relative;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 30px;
 }
 .contact .containerForm .row100 .col {
   position: relative;
@@ -583,6 +589,14 @@
   display: block;
   transition: 0.5s;
   pointer-events: none;
+}
+.contact .containerForm .row100 .col .error {
+  position: absolute;
+  top: 115%;
+  left: 0;
+  color: #FF3333;
+  font-weight: 800;
+  font-size: larger;
 }
 .contact .containerForm .row100 .col .inputBox input:focus + .text, .contact .containerForm .row100 .col .inputBox input:valid + .text, .contact .containerForm .row100 .col .inputBox textarea:focus + .text, .contact .containerForm .row100 .col .inputBox textarea:valid + .text {
   top: -35px;

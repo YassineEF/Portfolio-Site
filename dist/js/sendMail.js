@@ -30,9 +30,11 @@ send.addEventListener("click", async function () {
     if(FirstName.value === ""){
         FirstError.innerHTML = "This field is required, please fill it"
         error = false
+        send.style.pointerEvents = "auto";
     }else if(!NamePattern.test(FirstName.value)){
         FirstError.innerHTML = "Do not use specials character or less than 3 characters";
         error = false;
+        send.style.pointerEvents = "auto";
     }
     
     //Check the LastName field

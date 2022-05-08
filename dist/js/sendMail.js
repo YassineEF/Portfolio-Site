@@ -39,26 +39,32 @@ send.addEventListener("click", async function () {
     if(LastName.value === ""){
         LastError.innerHTML = "This field is required, please fill it"
         error = false
+        send.style.pointerEvents = "auto";
     }else  if(!NamePattern.test(LastName.value)){
         LastError.innerHTML = "Do not use specials character or less than 3 characters";
         error = false;
+        send.style.pointerEvents = "auto";
     }
     
     //Check the Email field
     if(Email.value === ""){
         EmailError.innerHTML="This field is required, please fill it"
         error = false
+        send.style.pointerEvents = "auto";
     }else if(!EmailPattern.test(Email.value)){
         EmailError.innerHTML = "Invalid Email Format";
         error = false
+        send.style.pointerEvents = "auto";
     }
     //Check the Message field
     if(Message.value === ""){
         MessageError.innerHTML="This field is required, please fill it"
         error = false 
+        send.style.pointerEvents = "auto";
     }else if(!TextPattern.test(Message.value)){
         MessageError.innerHTML="Please do not use special charcter"
         error = false 
+        send.style.pointerEvents = "auto";
     }
     //send Data AJAX
     if(error){

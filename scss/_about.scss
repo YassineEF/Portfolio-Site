@@ -1,4 +1,4 @@
-.about{
+.skills{
     padding-bottom: 2rem;
       background: 
             linear-gradient(
@@ -7,60 +7,76 @@
                 rgba($primary-color, 0.4)
             ), 
             url('../img/moon.jpg') center top;
+   
+            &_bio-image{
+                // height: 50vh;
+                width: 100%;
+                padding: 16vh 5% 13px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                
+                p{
+                    margin-bottom : 2rem;
+                    font-family: $font;
+                }
+            }
 
-    // &_bio-image{
-    //     height: 100%;
-    //     width: 100%;
-    //     // background: 
-    //     //     linear-gradient(
-    //     //         to right,
-    //     //         rgba($primary-color, 0.9),
-    //     //         rgba($primary-color, 0.4)
-    //     //     ), 
-    //     //     url('../img/grave.jpg') center top;
-    //     // background: linear-gradient(to right, #13756b, #131d75, #187513);
-    //     // background: linear-gradient(to right, rgb(138, 129, 129), rgb(187, 182, 182),#474444);
-    //     //  background-size: 400% 400%;
-    //     // animation: animatedBackground 10s infinite ease-in-out;
-    //     // background-size: cover;
-        
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     justify-content: flex-end;
-        
-    //     p{
-    //         margin-bottom : 2rem;
-    //         font-family: $font;
+    &_bio{
+        width: 80%;
+        text-align: center;
+        font-family: $font;
+        .text-secondary{
+            padding-bottom: 1rem;
+        }
+    }
+    &_Text{
+        // height: 100%;
+        // width: 100vh;
+        text-align: center;
+        // text-align: justify;
+        // display: flex;
+        // justify-content: space-around;
+        font-family: $font;
+        align-items: center;
+        // text-align: center;
+        // padding-top: 20vh;
+        // padding: 20vh 5% 0;
+        &_Title{
+            cursor: pointer;
+            padding-bottom: 1rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: $secondary-color;
+            // background-clip: text;
+            // -webkit-background-clip: text;
+            // -webkit-text-fill-color: transparent;
+        }
+    }
+    // &_TextSoft{
+    //     text-align: center;
+    //     font-family: $font;
+    //     padding: 10vh 5% 0;
+    //     &_Title{
+    //         padding-bottom: 1rem;
+    //         text-transform: uppercase;
+    //         font-weight: 900;
+    //         background: linear-gradient(
+    //         to right, 
+    //         $secondary-color, 
+    //         rgb(255, 255, 255)
+    //         );
+    //         background-clip: text;
+    //         -webkit-background-clip: text;
+    //         -webkit-text-fill-color: transparent;
     //     }
     // }
 
-    &_bio{
-        // height: 100%;
-        width: 100%;
-        text-align: center;
-        font-family: $font;
-        // text-align: center;
-        // padding-top: 20vh;
-        padding: 20vh 5% 0;
-        .text-secondary{
-            padding-bottom: 1rem;
-            text-transform: uppercase;
-            font-weight: 900;
-            background: linear-gradient(
-            to right, 
-            $secondary-color, 
-            rgb(255, 255, 255)
-            );
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    }
 
-    .jobs{
+    .langs{
         width: 60vw;
-        margin: 2rem auto 0 ;
+        margin: 1rem auto 0 ;
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 2rem;
@@ -73,16 +89,57 @@
         backdrop-filter: blur(9.9px);
         -webkit-backdrop-filter: blur(9.9px);
         border: 1px solid rgba(255, 255, 255, 0.27);
-        padding: 2rem 0 1rem;
-        &_job{
+        // padding: 2rem 0 1rem;
+        padding-top: 1rem;
+        &_lang{
             padding: 0.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
+
+    }
+    .langs{
+        width: 60vw;
+        margin: 1rem auto 0 ;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+        font-family: $font;
+
+        background-color: rgba(255, 255, 255, 0.002);
+        // color: black;
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.9px);
+        -webkit-backdrop-filter: blur(9.9px);
+        border: 1px solid rgba(255, 255, 255, 0.27);
+        // padding: 2rem 0 1rem;
+        padding-top: 1rem;
+        &_lang{
+            padding: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+    }
+    .hideSquare{
+        display: none;
+    }
+    .notSelected{
+        color: white;
+        font-weight: 200;
+    }
+    .notSelected:hover{
+        color: $secondary-color;
+        filter: drop-shadow(0 0 20px $secondary-color) drop-shadow(0 0 40px $secondary-color) drop-shadow(0 0 60px $secondary-color);
+        font-weight: 700;
     }
     
-   
+    
     
     .skill{
         width: 160px;
@@ -121,8 +178,8 @@
         fill: none;
         stroke: url(#GradientColor);
         stroke-width: 20px;  
-        stroke-dasharray: 472;
-        stroke-dashoffset: 472;
+        stroke-dasharray: 472px;
+        stroke-dashoffset: 472px;
     }
     #html{
         animation: anim 1.5s linear forwards; 
@@ -143,6 +200,10 @@
     }
     #sass{
         animation: animSass 1.5s linear forwards; 
+    }
+    #sSkills{
+        stroke: url(#GradientColors);
+        animation: animSkills 1.5s linear forwards; 
     }
     svg{
         position: absolute;
@@ -181,6 +242,13 @@
         100%{
             stroke-dashoffset: 142;
         }
+    }
+    @keyframes animSkills {
+        100%{
+            stroke-dashoffset: 0;
+
+        }
+        
     }
     
 

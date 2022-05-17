@@ -25,10 +25,23 @@
         }
     }
 
-    .about{
+    .skills{
         height: 100%;
         &_bio{
             font-size: 1.5rem;
+        }
+        &_Text{
+            display: flex;
+            justify-content: center;
+            // justify-content: space-around;
+            align-items: center;
+            &_Title{
+            
+                font-weight: 700;
+            }
+        }
+        #Tskills{
+            margin-right: 2rem;
         }
     }
 
@@ -48,7 +61,7 @@
     .contact_list{
         grid-template-columns: repeat(2, 1fr);
     }
-    .jobs{
+    .langs{
         grid-template-columns: repeat(2, 1fr) !important;
         display: flex;
     }
@@ -64,7 +77,7 @@
     .contact_list{
         grid-template-columns: repeat(3, 1fr);
     }
-    .jobs{
+    .langs{
         grid-template-columns: repeat(3, 1fr) !important;
     }
 }
@@ -74,7 +87,7 @@
     .projects_bio-image{
         height: 50vh;
     }
-    .jobs{
+    .langs{
         grid-template-columns: repeat(3, 1fr);
         display: flex;
     }

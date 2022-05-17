@@ -215,29 +215,46 @@
   transition-delay: 0.55s;
 }
 
-.about {
+.skills {
   padding-bottom: 2rem;
   background: linear-gradient(to right, rgba(39, 39, 39, 0.7), rgba(39, 39, 39, 0.4)), url("../img/moon.jpg") center top;
   /* To calculate the percentage we need to do 472 - 472 x 0.(our percentage) */
 }
-.about_bio {
+.skills_bio-image {
   width: 100%;
+  padding: 16vh 5% 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.skills_bio-image p {
+  margin-bottom: 2rem;
+  font-family: "Raleway", sans-serif;
+}
+.skills_bio {
+  width: 80%;
   text-align: center;
   font-family: "Raleway", sans-serif;
-  padding: 20vh 5% 0;
 }
-.about_bio .text-secondary {
+.skills_bio .text-secondary {
+  padding-bottom: 1rem;
+}
+.skills_Text {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  align-items: center;
+}
+.skills_Text_Title {
+  cursor: pointer;
   padding-bottom: 1rem;
   text-transform: uppercase;
-  font-weight: 900;
-  background: linear-gradient(to right, #03A062, white);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  color: #03A062;
 }
-.about .jobs {
+.skills .langs {
   width: 60vw;
-  margin: 2rem auto 0;
+  margin: 1rem auto 0;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2rem;
@@ -248,27 +265,60 @@
   backdrop-filter: blur(9.9px);
   -webkit-backdrop-filter: blur(9.9px);
   border: 1px solid rgba(255, 255, 255, 0.27);
-  padding: 2rem 0 1rem;
+  padding-top: 1rem;
 }
-.about .jobs_job {
+.skills .langs_lang {
   padding: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.about .skill {
+.skills .langs {
+  width: 60vw;
+  margin: 1rem auto 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  font-family: "Raleway", sans-serif;
+  background-color: rgba(255, 255, 255, 0.002);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.9px);
+  -webkit-backdrop-filter: blur(9.9px);
+  border: 1px solid rgba(255, 255, 255, 0.27);
+  padding-top: 1rem;
+}
+.skills .langs_lang {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skills .hideSquare {
+  display: none;
+}
+.skills .notSelected {
+  color: white;
+  font-weight: 200;
+}
+.skills .notSelected:hover {
+  color: #03A062;
+  filter: drop-shadow(0 0 20px #03A062) drop-shadow(0 0 40px #03A062) drop-shadow(0 0 60px #03A062);
+  font-weight: 700;
+}
+.skills .skill {
   width: 160px;
   height: 160px;
   position: relative;
 }
-.about .outer {
+.skills .outer {
   height: 160px;
   width: 160px;
   border-radius: 50%;
   box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
   padding: 20px;
 }
-.about .inner {
+.skills .inner {
   height: 120px;
   width: 120px;
   border-radius: 50%;
@@ -277,36 +327,40 @@
   justify-content: center;
   box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7), -0.5px -0.5px 0px white, 0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
 }
-.about .number {
+.skills .number {
   font-weight: 600;
   text-align: center;
 }
-.about circle {
+.skills circle {
   fill: none;
   stroke: url(#GradientColor);
   stroke-width: 20px;
-  stroke-dasharray: 472;
-  stroke-dashoffset: 472;
+  stroke-dasharray: 472px;
+  stroke-dashoffset: 472px;
 }
-.about #html {
+.skills #html {
   animation: anim 1.5s linear forwards;
 }
-.about #js {
+.skills #js {
   animation: animJs 1.5s linear forwards;
 }
-.about #php {
+.skills #php {
   animation: animPhp 1.5s linear forwards;
 }
-.about #sql {
+.skills #sql {
   animation: animSql 1.5s linear forwards;
 }
-.about #node {
+.skills #node {
   animation: animNode 1.5s linear forwards;
 }
-.about #sass {
+.skills #sass {
   animation: animSass 1.5s linear forwards;
 }
-.about svg {
+.skills #sSkills {
+  stroke: url(#GradientColors);
+  animation: animSkills 1.5s linear forwards;
+}
+.skills svg {
   position: absolute;
   top: 0;
   left: 0;
@@ -342,11 +396,16 @@
     stroke-dashoffset: 142;
   }
 }
-.about .social-icons {
+@keyframes animSkills {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.skills .social-icons {
   display: flex;
   flex-direction: column;
 }
-.about footer {
+.skills footer {
   transform: rotate(90deg) translate(-3rem, -5rem);
 }
 
@@ -751,11 +810,22 @@
     font-size: 1.5rem;
   }
 
-  .about {
+  .skills {
     height: 100%;
   }
-  .about_bio {
+  .skills_bio {
     font-size: 1.5rem;
+  }
+  .skills_Text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .skills_Text_Title {
+    font-weight: 700;
+  }
+  .skills #Tskills {
+    margin-right: 2rem;
   }
 
   .projects {
@@ -775,7 +845,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .jobs {
+  .langs {
     grid-template-columns: repeat(2, 1fr) !important;
     display: flex;
   }
@@ -789,7 +859,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .jobs {
+  .langs {
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
@@ -798,7 +868,7 @@
     height: 50vh;
   }
 
-  .jobs {
+  .langs {
     grid-template-columns: repeat(3, 1fr);
     display: flex;
   }

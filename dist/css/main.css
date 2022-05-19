@@ -25,17 +25,15 @@
   font-weight: 700;
 }
 
-@keyframes animatedBackground {
-  0% {
-    background-position: 0 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0 50%;
-  }
+.social-icons {
+  display: flex;
+  flex-direction: column;
 }
+
+footer {
+  transform: rotate(90deg) translate(-3rem, -5rem);
+}
+
 .menu-btn {
   position: absolute;
   z-index: 1;
@@ -164,7 +162,7 @@
 
 #logo {
   position: absolute;
-  top: 0;
+  top: 2;
   left: 0;
   z-index: 4;
 }
@@ -179,24 +177,6 @@
 }
 #logo svg #Intersect, #logo svg #Intersect_2, #logo svg #Intersect_3, #logo svg #Intersect_4, #logo svg #Intersect_5, #logo svg #Intersect_6 {
   transition: all 0.5s ease-in-out;
-}
-#logo svg:hover #Intersect {
-  transform: translate(20%, -20%);
-}
-#logo svg:hover #Intersect_2 {
-  transform: translate(20%, 0%);
-}
-#logo svg:hover #Intersect_3 {
-  transform: translate(20%, 20%);
-}
-#logo svg:hover #Intersect_4 {
-  transform: translate(-20%, -20%);
-}
-#logo svg:hover #Intersect_5 {
-  transform: translate(-20%, 0%);
-}
-#logo svg:hover #Intersect_6 {
-  transform: translate(-20%, 20%);
 }
 
 .menu-nav_item:nth-child(1) {
@@ -217,6 +197,7 @@
 
 .skills {
   padding-bottom: 2rem;
+  min-height: 100%;
   background: linear-gradient(to right, rgba(39, 39, 39, 0.7), rgba(39, 39, 39, 0.4)), url("../img/moon.jpg") center top;
   /* To calculate the percentage we need to do 472 - 472 x 0.(our percentage) */
 }
@@ -237,8 +218,29 @@
   text-align: center;
   font-family: "Raleway", sans-serif;
 }
-.skills_bio .text-secondary {
+.skills_bio_wrapper {
+  position: relative;
+}
+.skills_bio_wrapper .text-secondary {
   padding-bottom: 1rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: white;
+  animation: fade-in-text 0.01s linear 1.5s forwards;
+}
+.skills_bio_wrapper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 100%;
+  width: 0%;
+  bottom: 0;
+  z-index: 1;
+  background-color: #03A062;
+  animation: swipe-in-text 1s ease-out 1s forwards;
 }
 .skills_Text {
   text-align: center;
@@ -254,28 +256,7 @@
 }
 .skills .langs {
   width: 60vw;
-  margin: 1rem auto 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 2rem;
-  font-family: "Raleway", sans-serif;
-  background-color: rgba(255, 255, 255, 0.002);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(9.9px);
-  -webkit-backdrop-filter: blur(9.9px);
-  border: 1px solid rgba(255, 255, 255, 0.27);
-  padding-top: 1rem;
-}
-.skills .langs_lang {
-  padding: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.skills .langs {
-  width: 60vw;
-  margin: 1rem auto 0;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2rem;
@@ -315,7 +296,7 @@
   height: 160px;
   width: 160px;
   border-radius: 50%;
-  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.2);
   padding: 20px;
 }
 .skills .inner {
@@ -569,7 +550,7 @@
   position: relative;
   width: 100%;
   max-width: 1000px;
-  padding: 50px;
+  padding: 25px;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -590,11 +571,12 @@
   pointer-events: none;
   transform: skewX(-15deg);
 }
-.contact .containerForm h2 {
+.contact .containerForm h1 {
   width: 100%;
   text-align: center;
   color: #fff;
   font-size: 36px;
+  font-weight: 900;
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -810,11 +792,11 @@
     font-size: 1.5rem;
   }
 
-  .skills {
-    height: 100%;
-  }
   .skills_bio {
     font-size: 1.5rem;
+  }
+  .skills_bio .text-secondary {
+    font-size: 2.5rem;
   }
   .skills_Text {
     display: flex;
@@ -838,7 +820,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .projects .text-secondary {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .contact_list {
@@ -848,6 +830,10 @@
   .langs {
     grid-template-columns: repeat(2, 1fr) !important;
     display: flex;
+  }
+
+  .contact .text-secondary {
+    font-size: 2.5rem;
   }
 }
 @media screen and (min-width: 1024px) {

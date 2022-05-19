@@ -1,14 +1,11 @@
-import { anims } from "./animation.js";
+// import { anims } from "./animation.js";
 
 const menuButton = document.querySelector(".menu-btn");
 const hamburger = document.querySelector(".menu-btn_burger");
 const nav = document.querySelector(".nav");
 const menuNav = document.querySelector(".menu-nav");
 const navItems = document.querySelectorAll(".menu-nav_item");
-const TskillsButt = document.getElementById("Tskills");
-const SskillsButt = document.getElementById("skillsSoft");
-const TechnicalSquare = document.getElementById("TechnicalSqure");
-const SoftSquare = document.getElementById("SoftSquare");
+
 
 let showMenu = false;
 
@@ -39,33 +36,40 @@ function toggleMenu() {
 
 
 
-TskillsButt.addEventListener("click", clearClass);
-SskillsButt.addEventListener("click", clearClass);
 
 
-//function add class Hide or not
-function clearClass() {
-  if (TechnicalSquare.classList.contains("hideSquare")) {
-    TechnicalSquare.classList.remove("hideSquare");
-    SoftSquare.classList.add("hideSquare");
-    TskillsButt.classList.remove('notSelected')
-    SskillsButt.classList.add('notSelected')
-    const SoftSkills = document.querySelectorAll("#SoftSquare circle");
+const Intersect = document.getElementById('Intersect');
+const Intersect2 = document.getElementById('Intersect_2');
+const Intersect3 = document.getElementById('Intersect_3');
+const Intersect4 = document.getElementById('Intersect_4');
+const Intersect5 = document.getElementById('Intersect_5');
+const Intersect6 = document.getElementById('Intersect_6');
+const LogoSvg = document.getElementById('logoSVG')
 
-    anims(SoftSkills);
-  } else {
-    TechnicalSquare.classList.add("hideSquare");
-    SoftSquare.classList.remove("hideSquare");
-    TskillsButt.classList.add('notSelected')
-    SskillsButt.classList.remove('notSelected')
-    // const SoftSkills = document.querySelectorAll("#SoftSquare circle");
+console.log(LogoSvg);
+//Split Logo In different ways
+LogoSvg.addEventListener('mouseover', function() {
 
-    // anims(SoftSkills);
-    const SoftSkills = document.querySelectorAll("#SoftSquare circle");
+  Intersect.style.transform = "translate(20%, -20%)";
+  Intersect2.style.transform = "translate(20%, 0%)";
+  Intersect3.style.transform = "translate(20%, 20%)";
+  Intersect4.style.transform = "translate(-20%, -20%)";
+  Intersect5.style.transform = "translate(-20%, 0%)";
+  Intersect6.style.transform = "translate(-20%, 20%)";
 
-    anims(SoftSkills);
-  }
-}
+})
+
+//assemble logo to the origin
+LogoSvg.addEventListener('mouseout', function() {
+
+  Intersect.style.transform = "translate(0%, 0%)";
+  Intersect2.style.transform = "translate(0%, 0%)";
+  Intersect3.style.transform = "translate(0%, 0%)";
+  Intersect4.style.transform = "translate(0%, 0%)";
+  Intersect5.style.transform = "translate(0%, 0%)";
+  Intersect6.style.transform = "translate(0%, 0%)";
+
+})
 
 //change dynamically the year
 const d = new Date();

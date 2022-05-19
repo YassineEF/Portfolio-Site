@@ -35,14 +35,24 @@
     }
 }
 
-@keyframes animatedBackground{
-    0%{
-        background-position: 0 50%;
-    }
-    50%{
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0 50%;
-    }
+// @keyframes animatedBackground{
+//     0%{
+//         background-position: 0 50%;
+//     }
+//     50%{
+//         background-position: 100% 50%;
+//     }
+//     100%{
+//         background-position: 0 50%;
+//     }
+// }
+
+.social-icons{
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    transform: 
+        rotate(90deg)
+        translate(-3rem, -5rem);
 }

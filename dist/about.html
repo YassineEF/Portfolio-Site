@@ -22,7 +22,7 @@
         <div id="logo">
             <a href="../index.html">
                 <!-- <img src="./img/vecteezy_ye-monogram-letter-logo-ribbon-with-shield-style-isolated-on_4236063-removebg-preview (1).png" alt="Logo" > -->
-                <svg width="180" height="120" viewBox="0 0 233 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="180" height="120" viewBox="0 0 233 154" fill="none" xmlns="http://www.w3.org/2000/svg" id="logoSVG">
                     <g id="Frame 1">
                     <g id="leftLogo">
                     <path id="Intersect" fill-rule="evenodd" clip-rule="evenodd" d="M126.663 67H116V32C121.922 32.129 127.607 33.8357 132.699 37.0419C134.283 38.0397 135.768 39.2162 137.225 40.4065C137.411 40.5585 137.607 40.7536 137.81 40.9564C138.254 41.4 138.736 41.8808 139.237 42.0297C139.689 42.1639 140.323 42.0033 140.877 41.8632C141.084 41.8108 141.28 41.7613 141.45 41.731C141.845 41.6612 142.242 41.5868 142.641 41.512C143.916 41.2732 145.208 41.031 146.48 40.925L147.905 53.4625L149.096 64.5125H141.249C141.082 64.5125 140.844 64.5341 140.574 64.5585C139.803 64.6283 138.773 64.7215 138.392 64.4033C138.071 64.1344 138.048 63.118 138.03 62.3797C138.024 62.1209 138.019 61.8963 138.002 61.75C137.912 60.9812 137.815 60.2111 137.718 59.4402C137.489 57.6272 137.26 55.8096 137.125 53.9938C136.984 54.0001 136.836 54.0231 136.685 54.0464C136.356 54.0974 136.015 54.1502 135.717 54.0359C134.969 53.75 134.225 52.9457 133.56 52.2266C133.292 51.9369 133.037 51.661 132.799 51.4384C130.949 49.7042 129.037 47.9356 126.864 46.6625C126.536 48.12 126.624 50.145 126.702 51.951C126.733 52.6858 126.764 53.3844 126.764 53.9937L126.663 67Z" />
@@ -74,7 +74,9 @@
                 
                 <div class="skills_bio-image">
                     <div class="skills_bio">
-                        <h2 class="text-secondary">BIO</h2>
+                        <div class="skills_bio_wrapper">
+                            <h1 class="text-secondary">BIO</h1>
+                        </div>
                         <p>Hello! I'm Yassine El Fallouhi, a Junior web developer located in France. I have a serious passion for programming, video games and reading. I try to learn things every day and have new experiences. Enjoy your visit!  </p>
                     </div>
                 </div>
@@ -299,12 +301,14 @@
         </div> 
 
             <div class="social-icons">
+                <a href="./Cv/Curriculum_El_Fallouhi.pdf" download="El_Fallouhi_CV" style="--clr:#03A062;" target="blank" >
+                    <!-- <img src="./img/CV.png" alt="Cv-Logo" > -->
+                    <i class="fa-solid fa-file-arrow-down fa-2x"></i>
+                </a>
                 <a href="https://fr.linkedin.com/in/yassineef" style="--clr:#1da1f2;" target="_blank">
                     <i class="fab fa-linkedin fa-2x"></i>
                 </a>
                 <a href="mailto:yassineonline@outlook.fr"  style="--clr:#1877f2;" target="_blank">
-                    <!-- <i class="fab fa-facebook fa-2x"></i> -->
-                    <!-- <i class="fa-solid fa-envelope fa-2x"></i> -->
                     <i class="fa-solid fa-at fa-2x"></i>
                 </a>
                 <a href="https://www.instagram.com/lo.yasso/" style="--clr:#c32aa3;" target="_blank">
@@ -315,12 +319,13 @@
                 </a>
             </div>
 
-            <footer>&copy; Copytight 2022</footer>
+            <footer>&copy; Copyright <span class="year"></span></footer>
         </section>
     </main>
 
     <script src="https://kit.fontawesome.com/fea0f77b7b.js" crossorigin="anonymous"></script>
     
     <script type="module" src="./js/main.js" defer></script>
+    <script type="module" src="./js/SkillsAnim.js" defer></script>
 </body>
 </html>

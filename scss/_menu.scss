@@ -153,7 +153,7 @@
 }
 #logo{
     position: absolute;
-    top: 0;
+    top: 2;
     left: 0;
     z-index: 4;
     svg{
@@ -167,29 +167,29 @@
         #Intersect,#Intersect_2,#Intersect_3,#Intersect_4,#Intersect_5,#Intersect_6{
             transition: all 0.5s ease-in-out;
         }
-        &:hover #Intersect{
-            transform: translate(20%, -20%) ;
-        }
-        &:hover #Intersect_2{
-            transform: translate(20%, 0%);
+        // &:hover #Intersect{
+        //     transform: translate(20%, -20%) ;
+        // }
+        // &:hover #Intersect_2{
+        //     transform: translate(20%, 0%);
         
-        }
-        &:hover #Intersect_3{
-            transform: translate(20%, 20%);
+        // }
+        // &:hover #Intersect_3{
+        //     transform: translate(20%, 20%);
         
-        }
-        &:hover #Intersect_4{
-            transform: translate(-20%, -20%);
+        // }
+        // &:hover #Intersect_4{
+        //     transform: translate(-20%, -20%);
         
-        }
-        &:hover #Intersect_5{
-            transform: translate(-20%, 0%);
+        // }
+        // &:hover #Intersect_5{
+        //     transform: translate(-20%, 0%);
         
-        }
-        &:hover #Intersect_6{
-            transform: translate(-20%, 20%);
+        // }
+        // &:hover #Intersect_6{
+        //     transform: translate(-20%, 20%);
            
-        }
+        // }
 
     }
 }

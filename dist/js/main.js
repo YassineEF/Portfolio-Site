@@ -6,12 +6,9 @@ const nav = document.querySelector(".nav");
 const menuNav = document.querySelector(".menu-nav");
 const navItems = document.querySelectorAll(".menu-nav_item");
 
-
 let showMenu = false;
 
 menuButton.addEventListener("click", toggleMenu);
-
-
 
 //function menu toggle
 function toggleMenu() {
@@ -32,44 +29,38 @@ function toggleMenu() {
   }
 }
 
+// const Intersect = document.getElementById('Intersect');
+// const Intersect2 = document.getElementById('Intersect_2');
+// const Intersect3 = document.getElementById('Intersect_3');
+// const Intersect4 = document.getElementById('Intersect_4');
+// const Intersect5 = document.getElementById('Intersect_5');
+// const Intersect6 = document.getElementById('Intersect_6');
+// const LogoSvg = document.getElementById('logoSVG')
 
+// console.log(LogoSvg);
+// //Split Logo In different ways
+// LogoSvg.addEventListener('mouseover', function() {
 
+//   Intersect.style.transform = "translate(20%, -20%)";
+//   Intersect2.style.transform = "translate(20%, 0%)";
+//   Intersect3.style.transform = "translate(20%, 20%)";
+//   Intersect4.style.transform = "translate(-20%, -20%)";
+//   Intersect5.style.transform = "translate(-20%, 0%)";
+//   Intersect6.style.transform = "translate(-20%, 20%)";
 
+// })
 
+// //assemble logo to the origin
+// LogoSvg.addEventListener('mouseout', function() {
 
+//   Intersect.style.transform = "translate(0%, 0%)";
+//   Intersect2.style.transform = "translate(0%, 0%)";
+//   Intersect3.style.transform = "translate(0%, 0%)";
+//   Intersect4.style.transform = "translate(0%, 0%)";
+//   Intersect5.style.transform = "translate(0%, 0%)";
+//   Intersect6.style.transform = "translate(0%, 0%)";
 
-const Intersect = document.getElementById('Intersect');
-const Intersect2 = document.getElementById('Intersect_2');
-const Intersect3 = document.getElementById('Intersect_3');
-const Intersect4 = document.getElementById('Intersect_4');
-const Intersect5 = document.getElementById('Intersect_5');
-const Intersect6 = document.getElementById('Intersect_6');
-const LogoSvg = document.getElementById('logoSVG')
-
-console.log(LogoSvg);
-//Split Logo In different ways
-LogoSvg.addEventListener('mouseover', function() {
-
-  Intersect.style.transform = "translate(20%, -20%)";
-  Intersect2.style.transform = "translate(20%, 0%)";
-  Intersect3.style.transform = "translate(20%, 20%)";
-  Intersect4.style.transform = "translate(-20%, -20%)";
-  Intersect5.style.transform = "translate(-20%, 0%)";
-  Intersect6.style.transform = "translate(-20%, 20%)";
-
-})
-
-//assemble logo to the origin
-LogoSvg.addEventListener('mouseout', function() {
-
-  Intersect.style.transform = "translate(0%, 0%)";
-  Intersect2.style.transform = "translate(0%, 0%)";
-  Intersect3.style.transform = "translate(0%, 0%)";
-  Intersect4.style.transform = "translate(0%, 0%)";
-  Intersect5.style.transform = "translate(0%, 0%)";
-  Intersect6.style.transform = "translate(0%, 0%)";
-
-})
+// })
 
 //change dynamically the year
 const d = new Date();

@@ -153,12 +153,12 @@
 }
 #logo{
     position: absolute;
-    top: 2;
-    left: 0;
+    top: -10px;
+    left: -15px;
     z-index: 4;
     svg{
         cursor: pointer;
-
+        width: 120px;
         #leftLogo{
             fill: white;
         }#rightLogo{
@@ -199,7 +199,33 @@
 // }
 
 
-
+@media (hover: hover){
+    svg{
+        &:hover #Intersect{
+            transform: translate(20%, -20%) ;
+        }
+        &:hover #Intersect_2{
+            transform: translate(20%, 0%);
+        
+        }
+        &:hover #Intersect_3{
+            transform: translate(20%, 20%);
+        
+        }
+        &:hover #Intersect_4{
+            transform: translate(-20%, -20%);
+        
+        }
+        &:hover #Intersect_5{
+            transform: translate(-20%, 0%);
+        
+        }
+        &:hover #Intersect_6{
+            transform: translate(-20%, 20%);
+           
+        }
+    }
+}
 
 
 

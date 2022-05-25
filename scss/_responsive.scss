@@ -24,6 +24,11 @@
 
         }
     }
+    #logo{
+        svg{
+            width: 180px;
+        }
+    }
 
     .skills{
         // height: 100%;
@@ -51,9 +56,6 @@
 
     .projects{
         height: 100%;
-        &_bio-image{
-            height: 40vh;
-        }
         &_items{
             grid-template-columns: repeat(2, 1fr);
         }
@@ -94,9 +96,9 @@
 
 
 @include media-xl{
-    .projects_bio-image{
-        height: 50vh;
-    }
+    // .projects_bio-image{
+    //     height: 50vh;
+    // }
     .langs{
         grid-template-columns: repeat(3, 1fr);
         display: flex;

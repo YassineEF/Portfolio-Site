@@ -162,12 +162,13 @@ footer {
 
 #logo {
   position: absolute;
-  top: 2;
-  left: 0;
+  top: -10px;
+  left: -15px;
   z-index: 4;
 }
 #logo svg {
   cursor: pointer;
+  width: 120px;
 }
 #logo svg #leftLogo {
   fill: white;
@@ -179,6 +180,26 @@ footer {
   transition: all 0.5s ease-in-out;
 }
 
+@media (hover: hover) {
+  svg:hover #Intersect {
+    transform: translate(20%, -20%);
+  }
+  svg:hover #Intersect_2 {
+    transform: translate(20%, 0%);
+  }
+  svg:hover #Intersect_3 {
+    transform: translate(20%, 20%);
+  }
+  svg:hover #Intersect_4 {
+    transform: translate(-20%, -20%);
+  }
+  svg:hover #Intersect_5 {
+    transform: translate(-20%, 0%);
+  }
+  svg:hover #Intersect_6 {
+    transform: translate(-20%, 20%);
+  }
+}
 .menu-nav_item:nth-child(1) {
   transition-delay: 0.25s;
 }
@@ -426,7 +447,7 @@ footer {
   animation: swipe-in-text 1s ease-out 1s forwards;
 }
 .projects_items {
-  width: 60vw;
+  width: 75vw;
   margin: 2rem auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -617,6 +638,7 @@ footer {
   padding: 0 10px;
   z-index: 1;
   color: #000;
+  caret-color: #03A062;
 }
 .contact .containerForm .row100 .col .inputBox .text {
   position: absolute;
@@ -792,6 +814,10 @@ footer {
     font-size: 1.5rem;
   }
 
+  #logo svg {
+    width: 180px;
+  }
+
   .skills_bio {
     font-size: 1.5rem;
   }
@@ -812,9 +838,6 @@ footer {
 
   .projects {
     height: 100%;
-  }
-  .projects_bio-image {
-    height: 40vh;
   }
   .projects_items {
     grid-template-columns: repeat(2, 1fr);
@@ -850,10 +873,6 @@ footer {
   }
 }
 @media screen and (min-width: 1600px) {
-  .projects_bio-image {
-    height: 50vh;
-  }
-
   .langs {
     grid-template-columns: repeat(3, 1fr);
     display: flex;
